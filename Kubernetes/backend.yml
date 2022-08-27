@@ -19,8 +19,7 @@ spec:
         imagePullPolicy: Always
         name: api
         ports:
-          - containerPort: 3001
-        resources: {}        
+          - containerPort: 3001       
       restartPolicy: Always
 
 ---
