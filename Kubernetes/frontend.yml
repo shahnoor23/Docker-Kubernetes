@@ -19,8 +19,7 @@ spec:
         imagePullPolicy: Always
         name: web
         ports:
-          - containerPort: 3000
-        resources: {}        
+          - containerPort: 3000      
       restartPolicy: Always
 
 ---
