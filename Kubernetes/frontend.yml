@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app
+  labels:
+    app: web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+        image: frontend:1.0
+        imagePullPolicy: Always
+        name: web
+        ports:
+          - containerPort: 3000
+        resources: {}        
+      restartPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web
+spec:
+  type: ClusterIP
+  selector:
+    app: web-app
+  ports:
+    - name: "3000"
+      port: 3000
+      targetPort: 3000
