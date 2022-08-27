@@ -15,7 +15,7 @@ spec:
         app: web-app
     spec:
       containers:
-        image: frontend:1.0
+      - image: frontend:1.0
         imagePullPolicy: Always
         name: web
         ports:
