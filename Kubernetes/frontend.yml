@@ -15,12 +15,12 @@ spec:
         app: web-app
     spec:
       containers:
-      - image: shahnoorkhalidi/frontend:1.0
-        imagePullPolicy: Always
+      - image: shahnoorkhalidi/frontend:latest
+        imagePullPolicy: IfNotPresent
         name: web
         ports:
           - containerPort: 3000      
-      restartPolicy: Always
+      
 
 ---
 apiVersion: v1

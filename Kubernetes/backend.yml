@@ -15,7 +15,7 @@ spec:
         app: api-app
     spec:
       containers:
-      - image: shahnoorkhalidi/backend:1.0
+      - image: shahnoorkhalidi/backend:latest
         imagePullPolicy: Always
         name: api
         ports:
