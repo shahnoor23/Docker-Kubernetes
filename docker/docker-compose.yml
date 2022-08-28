@@ -1,5 +1,22 @@
 version: "3.8"
 services:
+  web:
+    image: frontend:1.0
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    networks:
+      - network-backend
+  api:
+    image: backend:1.0
+    depends_on:
+      - mongo
+    ports:
+      - "3001:3001"
+    networks: 
+     - network-backend
+  
   mongo:
     image: mongo
     restart: unless-stopped
